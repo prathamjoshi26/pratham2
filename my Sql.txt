@@ -1,0 +1,37 @@
+CREATE TABLE SCHOOL (
+    SchoolID INT AUTO_INCREMENT PRIMARY KEY,
+    SchoolName VARCHAR(100) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(50) NOT NULL,
+    State VARCHAR(50) NOT NULL,
+    ZipCode VARCHAR(10) NOT NULL
+);
+
+INSERT INTO SCHOOL (SchoolName, Address, City, State, ZipCode)
+VALUES
+
+
+CREATE TABLE STUDENT (
+    StudentID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    SchoolID INT,
+    FOREIGN KEY (SchoolID) REFERENCES SCHOOL(SchoolID)
+);
+
+INSERT INTO STUDENT (FirstName, LastName, DateOfBirth, SchoolID)
+VALUES
+
+CREATE TABLE COURSE (
+    CourseID INT AUTO_INCREMENT PRIMARY KEY,
+    CourseName VARCHAR(100) NOT NULL,
+    Description TEXT,
+    SchoolID INT,
+    FOREIGN KEY (SchoolID) REFERENCES SCHOOL(SchoolID)
+);
+
+INSERT INTO COURSE (CourseName, Description, SchoolID)
+VALUES
+
+
